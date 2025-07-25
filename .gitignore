@@ -1,0 +1,65 @@
+# =============================
+# Environment & Secrets
+# =============================
+# Local env files containing keys/tokens
+.env
+.env.*
+.env.local
+.local.env
+
+# Custom config (nếu bạn dùng config.js cho dev)
+frontend/config.js
+
+# =============================
+# Dependencies
+# =============================
+node_modules/
+
+# =============================
+# Build & Output
+# =============================
+# Vite / frontend build
+dist/
+build/
+out/
+
+# Cache / bundler
+.cache/
+
+# Coverage reports
+coverage/
+
+# =============================
+# Logs & Debug
+# =============================
+*.log
+logs/
+npm-debug.log*
+
+# =============================
+# OS & Editor Files
+# =============================
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# =============================
+# Lockfiles
+# =============================
+package-lock.json
+yarn.lock
+
+# =============================
+# Misc & Temporary
+# =============================
+*.tmp
+*.bak
+
+# =============================
+# Sensitive Text Files
+# =============================
+# Nếu bạn có file .txt chứa data nhạy cảm
+*.txt
