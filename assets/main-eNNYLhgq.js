@@ -5560,19 +5560,26 @@ function Js() {
 
 
 async function sendVouchToFlask(vouchData) {
-    const endpoint = "https://flask-vouch-api.onrender.com"; // thay bằng URL Flask của bạn
+    const endpoint = `${import.meta.env.VITE_SUPABASE_URL}/rest/v1/vouches`;
+
     try {
         const res = await fetch(endpoint, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(vouchData),
+            headers: {
+                "Content-Type": "application/json",
+                "apikey": import.meta.env.VITE_SUPABASE_API_KEY,
+                "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_API_KEY}`
+            },
+            body: JSON.stringify(vouchData)
         });
-        const data = await res.json();
+
+        const data = await res.json(); // <-- Phải đặt bên ngoài fetch options
         console.log("Flask response:", data);
     } catch (err) {
         console.error("Error sending vouch:", err);
     }
 }
+
 
 
 
